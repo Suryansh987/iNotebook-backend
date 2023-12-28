@@ -1,7 +1,7 @@
 const express = require('express')
 const connectToMongo = require('./db')
 const app = express()
-const port = 3000
+const port = 5000
 
 //Calling connectToMonogo Function(db.js) to connect to database 
 connectToMongo()
@@ -17,5 +17,5 @@ app.use('/api/user', require('./Routes/User'))
 
 //Route for User notes
 app.use('/api/notes', require('./Routes/Notes'))
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`iNoteBook backend Running at 127.0.0.1:${port}!`))
 
