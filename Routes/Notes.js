@@ -2,7 +2,7 @@ const { Router } = require("express");
 const jwt = require('jsonwebtoken')
 const Notes = require("../models/NotesSchema");
 const fetchid = require('../middlewares/fetchid')
-require('dotenv').config()
+require('dotenv').config({ path: 'D:\\PROJECTS FOR GIT\\iNotebook\\backend\\.env' })
 const router = Router()
 
 //ROUTE 1:TO INSERT A NOTE USING GET REQUEST
@@ -24,7 +24,7 @@ router.get('/insert',fetchid ,(req,res) => {
 //ROUTE 2 : TO DISPLAY ALL THE NOTES USING GET REQUEST
 router.get('/fetch-all',async(req,res)=>{
     const notes = await Notes.find({}).exec()
-    res.json({notes})
+    res.json(notes)
 })
 
 //ROUTE 3 : TO UPDATE AN EXISTING NOTE ONLY IF IT BELONGS TO THAT USER
