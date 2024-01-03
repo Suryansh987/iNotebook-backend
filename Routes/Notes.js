@@ -6,7 +6,7 @@ require('dotenv').config({ path: 'D:\\PROJECTS FOR GIT\\iNotebook\\backend\\.env
 const router = Router()
 
 //ROUTE 1:TO INSERT A NOTE USING GET REQUEST
-router.get('/insert',fetchid ,(req,res) => {
+router.post('/insert',fetchid ,(req,res) => {
     if(res.headersSent){
         return
     }
