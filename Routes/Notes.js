@@ -14,7 +14,7 @@ router.post('/insert',fetchid ,(req,res) => {
     const userid = req.id
     Notes.create({userid,title,description,tag})
     .then(note=>{
-        res.status(200).json({note})
+        res.status(200).json(note)
     })
     .catch(err=>{
         res.status(500).send("Internal Server Error")
