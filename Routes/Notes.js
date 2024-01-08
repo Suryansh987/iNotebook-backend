@@ -60,7 +60,7 @@ router.delete('/delete-note/:id',fetchid,async(req,res)=>{
     }
     if(note.userid.toString() === req.id){
         const deletedNote = await Notes.findByIdAndDelete(req.params.id)
-        return res.status(200).send({deletedNote})
+        return res.status(200).json(deletedNote)
     }
     res.status(401).send("Unauthorized")
 })
